@@ -28,7 +28,7 @@ public class AdicionarProdutoCarrinho extends HttpServlet {
         out.println("<body>");
         out.println("<H3>Adicionando produtos no carrinho de compras</H3>");
 
-        // obtendo os parametros de request...
+        //aaa obtendo os parametros de request...
         String strIdProduto = request.getParameter("idProduto");
         Produto prod = null;
         ProdutoDAO dao = new ProdutoDAOImpl();
