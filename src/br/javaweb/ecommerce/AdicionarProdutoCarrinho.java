@@ -17,27 +17,24 @@ public class AdicionarProdutoCarrinho extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
-        // Obtencao do canal de envio de dados para o cliente
+    
+    
         PrintWriter out = response.getWriter();
         out.println("<html>");
         out.println("<head>");
-        out.println("<title>Ecommerce : Academia do Java</title>");
+        out.println("<title>Loja Virtual : Java Web</title>");
         out.println("<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>");
         out.println("<link href= 'jw.css' rel='stylesheet' type='text/css'></link>");
         out.println("</head>");
         out.println("<body>");
         out.println("<H3>Adicionando produtos no carrinho de compras</H3>");
 
-        //aaa obtendo os parametros de request...
         String strIdProduto = request.getParameter("idProduto");
         Produto prod = null;
         ProdutoDAO dao = new ProdutoDAOImpl();
 
         try {
-            // -------------------------------------------------------------------
-            // Insira a partir daqui o codigo pedido no laboratorio:
-            // -------------------------------------------------------------------
-
+    
             prod = dao.getProdutoById(Integer.parseInt(strIdProduto));
         } catch (JavaWebException ex) {
             Logger.getLogger(AdicionarProdutoCarrinho.class.getName()).log(Level.SEVERE, null, ex);
